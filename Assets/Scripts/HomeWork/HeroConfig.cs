@@ -11,10 +11,10 @@ namespace DefaultNamespace
         [SerializeField] private string[] heroes;
         public string[] Heroes => heroes;
 
-        public GameObject GetRandomEffect()
+        public GameObject GetRandomHero()
         {
-            var effectName = heroes[Random.Range(0, heroes.Length)];
-            return LoadObject(effectName);
+            var heroName = heroes[Random.Range(0, heroes.Length)];
+            return LoadObject(heroName);
         }
 
         private GameObject LoadObject(string effectName)
@@ -22,7 +22,7 @@ namespace DefaultNamespace
             return Resources.Load<GameObject>($"Heroes/{effectName}");
         }
 
-        public GameObject GetEffect(string effectName)
+        public GameObject GetHero(string effectName)
         {
             var objName = heroes.FirstOrDefault(e => e == effectName);
             return string.IsNullOrEmpty(objName) ? null : LoadObject(effectName);

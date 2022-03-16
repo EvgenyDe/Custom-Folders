@@ -9,9 +9,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a22426bc1e80e45069c3c6a17b052a85, type: 3}
-  m_Name: HeroConfig
+  m_Script: {fileID: 11500000, guid: 27ffd0dec73745898d6c5a2b876cede4, type: 3}
+  m_Name: Male
   m_EditorClassIdentifier: 
-  heroes:
-  - Female A
-  - Male A
+  heroName: Male
+  prefabName: Male B
+  hairColor: white

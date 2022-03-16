@@ -34,7 +34,7 @@ namespace DefaultNamespace
         {
             var config = Resources.Load<IconInfo>($"Confisgs/{configName}");
             var sprite = Resources.Load<Sprite>($"Icons/{config.IconName}");
-            var prefab = Resources.Load<GameObject>($"Prefabs/{config.PrefabName}");
+            var prefab = Resources.Load<GameObject>($"HeroPrefabs/{config.PrefabName}");
 
             baseSprite.sprite = sprite;
 
