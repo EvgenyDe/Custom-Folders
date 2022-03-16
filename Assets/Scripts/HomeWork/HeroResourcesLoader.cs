@@ -5,7 +5,7 @@ namespace DefaultNamespace
     public class HeroResourcesLoader : MonoBehaviour
     {
         //[SerializeField] private SpriteRenderer baseSprite; //TODO hairColor
-        [SerializeField] private Texture baseHairTexture;
+       // [SerializeField] private Texture baseHairTexture;
         
         [SerializeField] private Transform prefabRoot;
 
@@ -34,6 +34,8 @@ namespace DefaultNamespace
             _config = Resources.Load<HeroInfo>($"ConfigsHero/{configName}");
             var prefab = Resources.Load<GameObject>($"HeroPrefabs/{_config.PrefabName}");
             
+           // var texture = Resources.Load<Texture>($"IconsHeroTextures/{_config.HairColor}");
+
             //var sprite = Resources.Load<Sprite>($"Icons/{config.IconName}");
             //baseSprite.sprite = sprite;
 
@@ -48,9 +50,19 @@ namespace DefaultNamespace
         
         public void SetHairColor(string hairColor)
         {
-            var texture = Resources.Load<Texture>($"IconsHeroTextures/{_config.HairColor}");
-            texture = Resources.Load<Texture>($"IconsHeroTextures/{hairColor}");
+            _config.HairMaterial = hairColor;
+            
+            var material = Resources.Load<Material>($"IconsHeroTextures/{_config.HairMaterial}");
 
+            if (hairColor == "white")
+            {
+                material.color = Color.white;
+            }
+
+            if (hairColor == "black")
+            {
+                material.color = Color.black;
+            }
         }
 
     }

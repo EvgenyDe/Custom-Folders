@@ -14,4 +14,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   heroName: Male
   prefabName: Male B
-  hairColor: white
+  hairColor: black
